@@ -113,19 +113,18 @@ const CONTENT = {
   // ---------- Team ----------
   // email is optional — leave as "" to hide it
   team: [
-    { role: "Principal Investigator", name: "Doç. Dr. Seçil Toros" },
-    { role: "Advisor", name: "Prof. Dr. Gülay Hasdoğan" },
-    { role: "Researcher", name: "Doç. Dr. Engin Kapkın" },
-    { role: "Researcher", name: "Dr. Öğr. Üyesi Elif Öztürk" },
-    { role: "MSc Scholar", name: "Arş. Gör. Şule Ak" },
-    { role: "PhD Scholar", name: "Dr. Yaprak Deniz Yurt" }
+    { role: "Principal Investigator", name: "Doç. Dr. Seçil Toros", "" },
+    { role: "Advisor", name: "Prof. Dr. Gülay Hasdoğan", ""  },
+    { role: "Researcher", name: "Doç. Dr. Engin Kapkın", ""  },
+    { role: "Researcher", name: "Dr. Öğr. Üyesi Elif Öztürk", ""  },
+    { role: "MSc Scholar", name: "Arş. Gör. Şule Ak", ""  },
+    { role: "PhD Scholar", name: "Dr. Yaprak Deniz Yurt", ""  }
   ],
 
   // ---------- Planned outputs ----------
   outputs: [
     "Peer-reviewed academic publications, national and international",
-    "Presentations at least one international and one national conference",
-    "A patent application for the digital application's computer-implemented method",
+    "A web-based application to be used in jury assessments",
     "Workshops and meetings with the design education and professional community"
   ],
 
