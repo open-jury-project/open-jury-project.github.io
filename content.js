@@ -113,12 +113,12 @@ const CONTENT = {
   // ---------- Team ----------
   // email is optional — leave as "" to hide it
   team: [
-    { role: "Principal Investigator", name: "Doç. Dr. Seçil Toros", email: "secil.toros@atilim.edu.tr" },
-    { role: "Advisor", name: "Prof. Dr. Gülay Hasdoğan", email: "hasdogan@metu.edu.tr" },
-    { role: "Researcher", name: "Doç. Dr. Engin Kapkın", email: "enginkapkin@gmail.com" },
-    { role: "Researcher", name: "Dr. Öğr. Üyesi Elif Öztürk", email: "elifalper@gmail.com" },
-    { role: "MSc Scholar", name: "Arş. Gör. Şule Ak", email: "" },
-    { role: "MSc Scholar", name: "Cemre Ilgaz Öz", email: "ilgaz2899@gmail.com" }
+    { role: "Principal Investigator", name: "Doç. Dr. Seçil Toros" },
+    { role: "Advisor", name: "Prof. Dr. Gülay Hasdoğan" },
+    { role: "Researcher", name: "Doç. Dr. Engin Kapkın" },
+    { role: "Researcher", name: "Dr. Öğr. Üyesi Elif Öztürk" },
+    { role: "MSc Scholar", name: "Arş. Gör. Şule Ak" },
+    { role: "PhD Scholar", name: "Dr. Yaprak Deniz Yurt" }
   ],
 
   // ---------- Planned outputs ----------
