@@ -2,17 +2,18 @@
    OpenJury — design tokens
    ========================================================== */
 :root {
-  --ink: #1C2B32;
-  --ink-soft: #4C5D63;
-  --primary: #305260;
-  --primary-dark: #1E343D;
-  --primary-tint: #7FA0AB;
-  --paper: #F5F7F5;
-  --paper-alt: #EAEFEC;
+  --ink: #142420;
+  --ink-soft: #4B5D58;
+  --primary: #116252;
+  --primary-dark: #0B4A3E;
+  --primary-tint: #7FAFA0;
+  --paper: #FDFAF5;
+  --paper-alt: #E3EEEF;
   --card: #FFFFFF;
-  --accent: #C98A2B;
-  --accent-soft: #E7C98A;
-  --line: #D8DED9;
+  --accent: #86B3BF;
+  --accent-deep: #35707D;
+  --accent-soft: #C7DEE3;
+  --line: #DCE6E4;
 
   --font-display: "Fraunces", Georgia, serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -338,7 +339,7 @@ img { max-width: 100%; display: block; }
 .phase-current .phase-dot {
   background: var(--accent);
   border-color: var(--accent);
-  box-shadow: 0 0 0 4px rgba(201, 138, 43, 0.22);
+  box-shadow: 0 0 0 4px rgba(134, 179, 191, 0.35);
 }
 
 .phase-num {
@@ -378,7 +379,7 @@ img { max-width: 100%; display: block; }
 }
 
 .phase-done .phase-status-tag { color: var(--primary); }
-.phase-current .phase-status-tag { color: var(--accent); font-weight: 600; }
+.phase-current .phase-status-tag { color: var(--accent-deep); font-weight: 600; }
 
 .phase-months {
   margin-top: 4px;
@@ -412,7 +413,7 @@ img { max-width: 100%; display: block; }
 
 .team-role {
   font-size: 0.8rem;
-  color: var(--accent);
+  color: var(--accent-deep);
   font-weight: 600;
   margin-bottom: 6px;
 }
