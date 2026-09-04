@@ -4,6 +4,7 @@
 :root {
   --ink: #142420;
   --ink-soft: #4B5D58;
+  --heading: #0A2E25;
   --primary: #116252;
   --primary-dark: #0B4A3E;
   --primary-tint: #7FAFA0;
@@ -11,7 +12,7 @@
   --paper-alt: #E3EEEF;
   --card: #FFFFFF;
   --accent: #86B3BF;
-  --accent-deep: #35707D;
+  --accent-deep: #1E7BA6;
   --accent-soft: #C7DEE3;
   --line: #DCE6E4;
 
@@ -44,7 +45,7 @@ body {
 
 h1, h2, h3 {
   font-family: var(--font-display);
-  color: var(--primary-dark);
+  color: var(--heading);
   margin: 0;
   font-weight: 600;
   line-height: 1.15;
@@ -276,7 +277,7 @@ img { max-width: 100%; display: block; }
 
 .progress-bar {
   height: 100%;
-  background: var(--accent);
+  background: var(--accent-deep);
   border-radius: 999px;
   transition: width 0.4s ease;
 }
@@ -332,14 +333,14 @@ img { max-width: 100%; display: block; }
 }
 
 .phase-done .phase-dot {
-  background: var(--primary);
-  border-color: var(--primary);
+  background: var(--heading);
+  border-color: var(--heading);
 }
 
 .phase-current .phase-dot {
-  background: var(--accent);
-  border-color: var(--accent);
-  box-shadow: 0 0 0 4px rgba(134, 179, 191, 0.35);
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
+  box-shadow: 0 0 0 4px rgba(30, 123, 166, 0.22);
 }
 
 .phase-num {
@@ -357,7 +358,7 @@ img { max-width: 100%; display: block; }
 }
 
 .phase-current .phase-content {
-  border-color: var(--accent-soft);
+  border-color: var(--accent-deep);
 }
 
 .phase-heading {
@@ -378,7 +379,7 @@ img { max-width: 100%; display: block; }
   white-space: nowrap;
 }
 
-.phase-done .phase-status-tag { color: var(--primary); }
+.phase-done .phase-status-tag { color: var(--heading); }
 .phase-current .phase-status-tag { color: var(--accent-deep); font-weight: 600; }
 
 .phase-months {
@@ -421,7 +422,7 @@ img { max-width: 100%; display: block; }
 .team-name {
   font-family: var(--font-display);
   font-size: 1.08rem;
-  color: var(--primary-dark);
+  color: var(--heading);
   margin-bottom: 6px;
 }
 
