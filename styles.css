@@ -353,7 +353,7 @@ img { max-width: 100%; display: block; }
 }
 
 .phase-done .phase-dot {
-  background: var(--heading);
+  background: var(--accent);
   border-color: var(--heading);
 }
 
