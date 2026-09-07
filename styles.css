@@ -400,6 +400,12 @@ img { max-width: 100%; display: block; }
   font-weight: 800;
 }
 
+/* Overrides so text stays readable against the tinted "done" card background */
+.phase-done .phase-months,
+.phase-done .phase-body {
+  color: var(--heading);
+}
+
 .phase-status-tag {
   font-size: 0.78rem;
   color: var(--ink-soft);
