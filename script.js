@@ -62,14 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
     teamGrid.appendChild(div);
   });
 
-  // Outputs
-  const outputsList = document.getElementById("outputs-list");
-  c.outputs.forEach(item => {
-    const li = document.createElement("li");
-    li.textContent = item;
-    outputsList.appendChild(li);
-  });
-
   // Gallery
   const galleryGrid = document.getElementById("gallery-grid");
   if (c.gallery.length === 0) {

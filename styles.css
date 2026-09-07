@@ -2,20 +2,20 @@
    OpenJury — design tokens
    ========================================================== */
 :root {
-  --ink: #142420;
-  --ink-soft: #4B5D58;
-  --heading: #0A2E25;
-  --primary: #116252;
-  --primary-dark: #0B4A3E;
-  --primary-tint: #7FAFA0;
-  --paper: #FDFAF5;
-  --paper-alt: #E3EEEF;
+  --ink: #3D3835;
+  --ink-soft: #6E6560;
+  --heading: #2A2624;
+  --primary: #6B7C98;
+  --primary-dark: #48566F;
+  --primary-tint: #A7B0C2;
+  --paper: #E9E6E7;
+  --paper-alt: #DBD7D6;
   --card: #FFFFFF;
-  --accent: #86B3BF;
-  --accent-deep: #1E7BA6;
-  --accent-soft: #C7DEE3;
-  --line: #DCE6E4;
-  --bold-blue: #0F5C82;
+  --accent: #AB978C;
+  --accent-deep: #6B5C52;
+  --accent-soft: #D8CCC4;
+  --line: #D2CDC9;
+  --bold-blue: #48566F;
 
   --font-display: "Fraunces", Georgia, serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -41,6 +41,7 @@ body {
   color: var(--ink);
   background: var(--paper);
   line-height: 1.55;
+  font-size: 1.04rem;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -48,8 +49,9 @@ h1, h2, h3 {
   font-family: var(--font-display);
   color: var(--heading);
   margin: 0;
-  font-weight: 700;
-  line-height: 1.12;
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
 }
 
 a {
@@ -85,7 +87,7 @@ img { max-width: 100%; display: block; }
 }
 
 .section h2 {
-  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  font-size: clamp(2.1rem, 4vw, 2.9rem);
   max-width: var(--max-text);
   margin-bottom: 16px;
 }
@@ -124,10 +126,10 @@ img { max-width: 100%; display: block; }
   align-items: center;
   gap: 9px;
   text-decoration: none;
-  color: var(--primary-dark);
+  color: var(--heading);
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.15rem;
+  font-weight: 800;
+  font-size: 1.2rem;
 }
 
 .nav-mark {
@@ -199,16 +201,17 @@ img { max-width: 100%; display: block; }
 }
 
 .hero h1 {
-  font-size: clamp(2.3rem, 5.4vw, 3.4rem);
-  letter-spacing: -0.01em;
+  font-size: clamp(2.7rem, 6.4vw, 4.3rem);
+  letter-spacing: -0.02em;
   color: #FFFFFF;
-  font-weight: 700;
+  font-weight: 900;
 }
 
 .tagline {
-  margin-top: 22px;
-  font-size: 1.18rem;
-  color: rgba(255, 255, 255, 0.88);
+  margin-top: 26px;
+  font-size: 1.28rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
   max-width: 54ch;
 }
 
@@ -245,69 +248,30 @@ img { max-width: 100%; display: block; }
 }
 
 /* ==========================================================
-   Marquee
-   ========================================================== */
-.marquee {
-  background: var(--heading);
-  overflow: hidden;
-  padding: 16px 0;
-  white-space: nowrap;
-}
-
-.marquee-track {
-  display: inline-flex;
-  align-items: center;
-  animation: marquee-scroll 22s linear infinite;
-  will-change: transform;
-}
-
-.marquee-track span {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.1rem;
-  color: #FFFFFF;
-  padding: 0 8px;
-}
-
-.marquee-dot {
-  color: var(--accent);
-  font-style: normal !important;
-  padding: 0 18px !important;
-}
-
-@keyframes marquee-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track { animation: none; }
-}
-
-/* ==========================================================
    Aim
    ========================================================== */
 .aim-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-top: 8px;
+  gap: 44px;
+  margin-top: 0;
 }
 
 .aim-block h3 {
-  font-size: 1.15rem;
-  margin-bottom: 12px;
-  color: var(--primary-dark);
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 14px;
+  color: var(--heading);
 }
 
 .aim-block p {
   color: var(--ink-soft);
-  font-size: 0.98rem;
+  font-size: 1.02rem;
 }
 
 .aim-block {
-  border-top: 2px solid var(--primary);
-  padding-top: 18px;
+  border-top: 4px solid var(--primary);
+  padding-top: 22px;
 }
 
 @media (max-width: 860px) {
@@ -391,7 +355,7 @@ img { max-width: 100%; display: block; }
 .phase-current .phase-dot {
   background: var(--accent-deep);
   border-color: var(--accent-deep);
-  box-shadow: 0 0 0 4px rgba(30, 123, 166, 0.22);
+  box-shadow: 0 0 0 4px rgba(107, 92, 82, 0.25);
 }
 
 .phase-num {
@@ -422,7 +386,8 @@ img { max-width: 100%; display: block; }
 }
 
 .phase-heading h3 {
-  font-size: 1.15rem;
+  font-size: 1.3rem;
+  font-weight: 800;
 }
 
 .phase-status-tag {
@@ -473,7 +438,8 @@ img { max-width: 100%; display: block; }
 
 .team-name {
   font-family: var(--font-display);
-  font-size: 1.08rem;
+  font-size: 1.2rem;
+  font-weight: 700;
   color: var(--heading);
   margin-bottom: 6px;
 }
