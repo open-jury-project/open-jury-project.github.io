@@ -133,7 +133,7 @@ const CONTENT = {
   // Add photos by placing a file in assets/gallery/ and adding a line here:
   // { src: "assets/gallery/photo1.jpg", caption: "Team meeting, March 2026" }
   gallery: [
-    { src: "assets/gallery/photo1.jpg", caption: "Team meeting, January 2026" }
+    { src: "assets/gallery/photo1.jpg", caption: "Team meeting, January 2026" },
     { src: "assets/gallery/photo2.jpg", caption: "Team meeting, July 2026" }
   ],
 
