@@ -15,6 +15,7 @@
   --accent-deep: #1E7BA6;
   --accent-soft: #C7DEE3;
   --line: #DCE6E4;
+  --bold-blue: #0F5C82;
 
   --font-display: "Fraunces", Georgia, serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -47,8 +48,8 @@ h1, h2, h3 {
   font-family: var(--font-display);
   color: var(--heading);
   margin: 0;
-  font-weight: 600;
-  line-height: 1.15;
+  font-weight: 700;
+  line-height: 1.12;
 }
 
 a {
@@ -166,9 +167,9 @@ img { max-width: 100%; display: block; }
    ========================================================== */
 .hero {
   position: relative;
-  padding: 96px 24px 88px;
+  padding: 104px 24px 96px;
   overflow: hidden;
-  background: var(--paper);
+  background: var(--bold-blue);
 }
 
 .hero-motif {
@@ -178,9 +179,9 @@ img { max-width: 100%; display: block; }
   width: 560px;
   height: 560px;
   fill: none;
-  stroke: var(--primary-tint);
+  stroke: rgba(255, 255, 255, 0.28);
   stroke-width: 1.2;
-  opacity: 0.35;
+  opacity: 0.7;
   pointer-events: none;
 }
 
@@ -192,21 +193,29 @@ img { max-width: 100%; display: block; }
 }
 
 .eyebrow {
-  color: var(--ink-soft);
+  color: rgba(255, 255, 255, 0.75);
   font-size: 0.95rem;
   margin-bottom: 20px;
 }
 
 .hero h1 {
-  font-size: clamp(2.1rem, 5vw, 3.15rem);
+  font-size: clamp(2.3rem, 5.4vw, 3.4rem);
   letter-spacing: -0.01em;
+  color: #FFFFFF;
+  font-weight: 700;
 }
 
 .tagline {
   margin-top: 22px;
-  font-size: 1.15rem;
-  color: var(--ink-soft);
+  font-size: 1.18rem;
+  color: rgba(255, 255, 255, 0.88);
   max-width: 54ch;
+}
+
+.tagline em {
+  font-style: italic;
+  color: var(--accent-soft);
+  font-family: var(--font-display);
 }
 
 .hero-status {
@@ -216,21 +225,63 @@ img { max-width: 100%; display: block; }
   gap: 10px;
   flex-wrap: wrap;
   font-size: 0.95rem;
-  color: var(--ink-soft);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .pill {
   display: inline-block;
-  padding: 6px 14px;
+  padding: 7px 16px;
   border-radius: 999px;
-  background: var(--primary-dark);
-  color: #fff;
-  font-size: 0.85rem;
-  font-weight: 500;
+  background: #FFFFFF;
+  color: var(--bold-blue);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
 .hero-status-sep {
-  color: var(--line);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ==========================================================
+   Marquee
+   ========================================================== */
+.marquee {
+  background: var(--heading);
+  overflow: hidden;
+  padding: 16px 0;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-flex;
+  align-items: center;
+  animation: marquee-scroll 22s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track span {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #FFFFFF;
+  padding: 0 8px;
+}
+
+.marquee-dot {
+  color: var(--accent);
+  font-style: normal !important;
+  padding: 0 18px !important;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
 }
 
 /* ==========================================================
@@ -358,7 +409,8 @@ img { max-width: 100%; display: block; }
 }
 
 .phase-current .phase-content {
-  border-color: var(--accent-deep);
+  border-color: var(--line);
+  border-left: 6px solid var(--accent-deep);
 }
 
 .phase-heading {

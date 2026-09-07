@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Hero
   setText("hero-programme", c.programme);
   setText("hero-title", c.title);
-  setText("hero-tagline", c.tagline);
+  document.getElementById("hero-tagline").innerHTML = c.tagline; // supports <em> for emphasis
   setText("hero-year", c.currentYearLabel);
   setText("hero-phase", c.currentPhaseLabel);
   document.title = "OpenJury — " + c.title;

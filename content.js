@@ -16,7 +16,8 @@ const CONTENT = {
   // ---------- Top banner ----------
   programme: "TÜBİTAK 1001 Research Project · Atılım University",
   title: "Assessment and Evaluation Model for Industrial Design Juries",
-  tagline: "Turning design juries from subjective grading into a transparent, evidence-based, student-centered process — from expert consensus to a working digital application.",
+  // Wrap a phrase in <em>...</em> to italicize/highlight it, like the example below.
+  tagline: "Turning design juries from subjective grading into a <em>transparent, evidence-based</em>, student-centered process — from expert consensus to a working digital application.",
 
   // Update these two as the project moves forward
   currentYearLabel: "Year 1 of 3",
@@ -113,18 +114,19 @@ const CONTENT = {
   // ---------- Team ----------
   // email is optional — leave as "" to hide it
   team: [
-    { role: "Principal Investigator", name: "Doç. Dr. Seçil Toros", email: "" },
-    { role: "Advisor", name: "Prof. Dr. Gülay Hasdoğan", email: "" },
-    { role: "Researcher", name: "Doç. Dr. Engin Kapkın", email: "" },
-    { role: "Researcher", name: "Dr. Öğr. Üyesi Elif Öztürk", email: "" },
+    { role: "Principal Investigator", name: "Doç. Dr. Seçil Toros", email: "secil.toros@atilim.edu.tr" },
+    { role: "Advisor", name: "Prof. Dr. Gülay Hasdoğan", email: "hasdogan@metu.edu.tr" },
+    { role: "Researcher", name: "Doç. Dr. Engin Kapkın", email: "enginkapkin@gmail.com" },
+    { role: "Researcher", name: "Dr. Öğr. Üyesi Elif Öztürk", email: "elifalper@gmail.com" },
     { role: "MSc Scholar", name: "Arş. Gör. Şule Ak", email: "" },
-    { role: "PhD Scholar", name: "Dr. Yaprak Deniz Yurt", email: "" }
+    { role: "MSc Scholar", name: "Cemre Ilgaz Öz", email: "ilgaz2899@gmail.com" }
   ],
 
   // ---------- Planned outputs ----------
   outputs: [
     "Peer-reviewed academic publications, national and international",
-    "A web-based application to be used in jury assessments",
+    "Presentations at least one international and one national conference",
+    "A patent application for the digital application's computer-implemented method",
     "Workshops and meetings with the design education and professional community"
   ],
 
