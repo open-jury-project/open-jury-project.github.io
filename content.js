@@ -56,21 +56,15 @@ const CONTENT = {
     {
       title: "UTAK 2026 Conference",
       subtitle: "September 2026",
-      body: "Presented early findings from the Delphi study at UTAK 2026.",
+      body: "Led a workshop at UTAK titled 'Transforming Project Presentation and Jury Processes: Assessment and Evaluation,' exploring how structured measurement can reshape design jury practice.",
       relatedPhase: "WP2"
     },
     {
-      title: "Article published",
+      title: "We got accepted by X Conference",
       subtitle: "August 2026",
-      body: "A short piece on the project's aims was published in [venue].",
+      body: "We will present our early findings from the Delphi study at X Conference.",
       relatedPhase: "WP2"
     },
-    {
-      title: "New team member",
-      subtitle: "July 2026",
-      body: "Welcomed a new member to the project team.",
-      relatedPhase: "WP1"
-    }
   ],
 
   // ---------- Project phases (work packages) ----------
