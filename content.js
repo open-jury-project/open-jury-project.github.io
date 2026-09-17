@@ -159,8 +159,8 @@ const CONTENT = {
   gallery: [
     { src: "assets/gallery/Photo1.jpg", caption: "Team meeting, January 2026" },
     { src: "assets/gallery/Photo2.jpeg", caption: "Team meeting, July 2026" },
-    { src: "assets/gallery/Photo2.jpeg", caption: "From the workshop at UTAK 2026 Conference, September 2026" },
-    { src: "assets/gallery/Photo2.jpeg", caption: "Team meeting at UTAK 2026 Conference at METU, September 2026" }
+    { src: "assets/gallery/Photo3.jpeg", caption: "From the workshop at UTAK 2026 Conference, September 2026" },
+    { src: "assets/gallery/Photo4.jpeg", caption: "Team meeting at UTAK 2026 Conference at METU, September 2026" }
   ],
 
   // ---------- Footer ----------
