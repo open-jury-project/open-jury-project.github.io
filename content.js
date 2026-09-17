@@ -14,7 +14,7 @@
 const CONTENT = {
 
   // ---------- Top banner ----------
-  programme: "TÜBİTAK 1001 Research Project · Atılım University",
+  programme: "TÜBİTAK 1001/125K884 Research Project · Atılım University",
   title: "Assessment and Evaluation Model for Industrial Design Juries",
   // Wrap a phrase in <em>...</em> to italicize/highlight it, like the example below.
   tagline: "Turning design juries from subjective grading into a <em>transparent, evidence-based</em>, student-centered process — from expert consensus to a working digital application.",
@@ -164,7 +164,7 @@ const CONTENT = {
   ],
 
   // ---------- Footer ----------
-  footerPI: "Principal Investigator — Doç. Dr. Seçil Toros",
+  footerPI: "Principal Investigator — Assoc. Prof. Dr. Seçil Toros",
   footerEmail: "secil.toros@atilim.edu.tr",
   lastUpdated: "September 2026"
 };
