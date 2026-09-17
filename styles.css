@@ -436,22 +436,60 @@ img { max-width: 100%; display: block; }
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
-
+ 
 .team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
   background: var(--card);
   border: 1px solid var(--line);
   border-left: 3px solid var(--primary);
   border-radius: 6px;
-  padding: 20px 22px;
+  padding: 24px 22px;
 }
-
+ 
+.team-avatar {
+  flex: none;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+ 
+.team-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+ 
+.team-avatar-initials {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(155deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+ 
+.team-card-body {
+  min-width: 0;
+}
+ 
 .team-role {
   font-size: 0.8rem;
   color: var(--accent-deep);
   font-weight: 600;
   margin-bottom: 6px;
 }
-
+ 
 .team-name {
   font-family: var(--font-body);
   font-size: 1.15rem;
@@ -459,25 +497,27 @@ img { max-width: 100%; display: block; }
   color: var(--heading);
   margin-bottom: 6px;
 }
-
+ 
 .team-card a {
   font-size: 0.88rem;
   color: var(--ink-soft);
   text-decoration: none;
   word-break: break-word;
 }
-
+ 
 .team-card a:hover {
   color: var(--primary);
   text-decoration: underline;
 }
-
+ 
 @media (max-width: 860px) {
   .team-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 560px) {
   .team-grid { grid-template-columns: 1fr; }
 }
+ 
+
 
 /* ==========================================================
    Outputs
