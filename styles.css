@@ -541,7 +541,7 @@ img { max-width: 100%; display: block; }
    Footer
    ========================================================== */
 footer {
-  background: var(--primary-tint);
+  background: var(--bold-blue);
   color: #DDE6E7;
   padding: 56px 24px 40px;
 }
