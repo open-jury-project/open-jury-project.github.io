@@ -113,7 +113,6 @@ function renderContent(lang) {
 
   // Gallery
   setText("gallery-heading", ui.galleryHeading);
-  setText("gallery-lede", ui.galleryLede);
   const galleryGrid = document.getElementById("gallery-grid");
   galleryGrid.innerHTML = "";
   if (c.gallery.length === 0) {
