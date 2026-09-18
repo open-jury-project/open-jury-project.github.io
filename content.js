@@ -37,7 +37,6 @@ const CONTENT = {
       monthLabel: (current, total) => `Month ${current} of ${total}`,
       teamHeading: "Team",
       galleryHeading: "From the project",
-      galleryLede: "Photos from team meetings and study sessions will appear here as the project progresses.",
       galleryEmpty: "No photos added yet.",
       footerUpdatedPrefix: "Last updated",
       footerNote: "This is a project documentation site, not an official TÜBİTAK publication.",
@@ -149,11 +148,13 @@ const CONTENT = {
     // "src" is the same file in both languages — only translate "caption".
     gallery: [
       { src: "assets/gallery/Photo1.jpg", caption: "Team meeting, January 2026" },
-      { src: "assets/gallery/Photo2.jpeg", caption: "Team meeting, July 2026" }
+      { src: "assets/gallery/Photo2.jpeg", caption: "Team meeting, July 2026" },
+      { src: "assets/gallery/Photo3.jpeg", caption: "Workshop at UTAK 2026" },
+      { src: "assets/gallery/Photo4.jpeg", caption: "Team at UTAK 2026, METU" }
     ],
 
     // ---------- Footer ----------
-    footerPI: "Principal Investigator — Doç. Dr. Seçil Toros",
+    footerPI: "Principal Investigator — Assoc. Prof. Dr. Seçil Toros",
     footerEmail: "secil.toros@atilim.edu.tr",
     lastUpdated: "September 2026"
   },
@@ -173,7 +174,6 @@ const CONTENT = {
       monthLabel: (current, total) => `Ay ${current} / ${total}`,
       teamHeading: "Ekip",
       galleryHeading: "Projeden Kareler",
-      galleryLede: "Ekip toplantılarından ve çalışma oturumlarından fotoğraflar, proje ilerledikçe burada yer alacaktır.",
       galleryEmpty: "Henüz fotoğraf eklenmedi.",
       footerUpdatedPrefix: "Son güncelleme:",
       footerNote: "Bu bir proje dokümantasyon sitesidir; resmi bir TÜBİTAK yayını değildir.",
@@ -266,7 +266,9 @@ const CONTENT = {
 
     gallery: [
       { src: "assets/gallery/Photo1.jpg", caption: "Ekip toplantısı, Ocak 2026" },
-      { src: "assets/gallery/Photo2.jpeg", caption: "Ekip toplantısı, Temmuz 2026" }
+      { src: "assets/gallery/Photo2.jpeg", caption: "Ekip toplantısı, Temmuz 2026" },
+      { src: "assets/gallery/Photo3.jpeg", caption: "UTAK 2026'da çalıştay" },
+      { src: "assets/gallery/Photo4.jpeg", caption: "UTAK 2026'da ekip, ODTÜ" }
     ],
 
     footerPI: "Proje Yürütücüsü — Doç. Dr. Seçil Toros",
