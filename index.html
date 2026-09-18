@@ -18,11 +18,15 @@
     <img src="assets/logo-full.png" alt="OpenJury" class="nav-logo">
   </a>
   <nav class="nav-links">
-    <a href="#aim">Aim</a>
-    <a href="#timeline">Timeline</a>
-    <a href="#team">Team</a>
-    <a href="#contact">Contact</a>
+    <a href="#aim" id="nav-aim">Aim</a>
+    <a href="#timeline" id="nav-timeline">Timeline</a>
+    <a href="#team" id="nav-team">Team</a>
+    <a href="#contact" id="nav-contact">Contact</a>
   </nav>
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" class="lang-btn" data-lang="en">EN</button>
+    <button type="button" class="lang-btn" data-lang="tr">TR</button>
+  </div>
 </header>
 
 <main>
@@ -54,8 +58,8 @@
   <!-- ============ TIMELINE ============ -->
   <section class="section section-alt" id="timeline">
     <div class="section-inner">
-      <h2>Project phases</h2>
-      <p class="section-lede">
+      <h2 id="timeline-heading">Project phases</h2>
+      <p class="section-lede" id="timeline-lede">
         The project runs over 36 months, organized into nine work packages. Progress below reflects where things stand right now.
       </p>
 
@@ -74,7 +78,7 @@
   <!-- ============ TEAM ============ -->
   <section class="section" id="team">
     <div class="section-inner">
-      <h2>Team</h2>
+      <h2 id="team-heading">Team</h2>
       <div class="team-grid" id="team-grid">
         <!-- filled by script.js from content.js -->
       </div>
@@ -84,8 +88,8 @@
   <!-- ============ GALLERY ============ -->
   <section class="section section-alt" id="gallery">
     <div class="section-inner">
-      <h2>From the project</h2>
-      <p class="section-lede">Photos from team meetings and study sessions will appear here as the project progresses.</p>
+      <h2 id="gallery-heading">From the project</h2>
+      <p class="section-lede" id="gallery-lede">Photos from team meetings and study sessions will appear here as the project progresses.</p>
       <div class="gallery-grid" id="gallery-grid">
         <!-- filled by script.js from content.js -->
       </div>
@@ -107,7 +111,7 @@
       <p id="footer-pi">Principal Investigator — Doç. Dr. Seçil Toros</p>
       <p><a id="footer-email" href="mailto:secil.toros@atilim.edu.tr">secil.toros@atilim.edu.tr</a></p>
     </div>
-    <p class="footer-note" id="editing-note">Last updated <span id="footer-updated">—</span>. This is a project documentation site, not an official TÜBİTAK publication.</p>
+    <p class="footer-note" id="editing-note"><span id="footer-updated-prefix">Last updated</span> <span id="footer-updated">—</span>. <span id="footer-note-text">This is a project documentation site, not an official TÜBİTAK publication.</span></p>
   </div>
 </footer>
 
