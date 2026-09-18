@@ -141,13 +141,12 @@ img { max-width: 100%; display: block; }
   width: 48px;
   height: 48px;
   flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--status-active);
+  display: block;
+  overflow: hidden;
 }
 
 .nav-badge-icon {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
