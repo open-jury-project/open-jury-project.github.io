@@ -124,7 +124,7 @@ img { max-width: 100%; display: block; }
   justify-content: space-between;
   flex-wrap: wrap;
   row-gap: 10px;
-  padding: 16px 24px;
+  padding: 8px 24px;
   background: rgba(245, 247, 245, 0.92);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
@@ -133,13 +133,31 @@ img { max-width: 100%; display: block; }
 .nav-brand {
   display: flex;
   align-items: center;
+  gap: 12px;
   text-decoration: none;
 }
 
-.nav-logo {
-  height: 80px;
-  width: auto;
+.nav-badge {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--status-past);
+}
+
+.nav-badge-icon {
+  width: 68%;
+  height: 68%;
   object-fit: contain;
+}
+
+.nav-wordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--heading);
 }
 
 .nav-links {
