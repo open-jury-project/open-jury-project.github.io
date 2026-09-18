@@ -18,6 +18,10 @@
   --line: #DCD6CC;
   --bold-blue: #3B4E56;
 
+  --status-past: #2C5233;
+  --status-active: #F2C230;
+  --status-upcoming: #FF7A5C;
+
   --font-display: "Space Grotesk", "Segoe UI", sans-serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
@@ -47,10 +51,10 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   color: var(--heading);
   margin: 0;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.01em;
 }
@@ -342,10 +346,11 @@ img { max-width: 100%; display: block; }
 }
 
 .update-card {
-  background: var(--teal-soft);
-  border: 1px solid #C5D5D8;
-  border-radius: 8px;
+  background: var(--paper-alt);
+  border: 2px solid var(--heading);
+  border-radius: 0;
   padding: 16px 18px;
+  box-shadow: 6px 6px 0 0 var(--primary);
 }
 
 .update-title {
@@ -402,14 +407,18 @@ img { max-width: 100%; display: block; }
 }
 
 .phase-done .phase-dot {
-  background: var(--heading);
-  border-color: var(--heading);
+  background: var(--status-past);
+  border-color: var(--status-past);
 }
 
 .phase-current .phase-dot {
-  background: var(--accent-deep);
-  border-color: var(--accent-deep);
-  box-shadow: 0 0 0 4px rgba(107, 92, 82, 0.25);
+  background: var(--status-active);
+  border-color: var(--status-active);
+  box-shadow: 0 0 0 4px rgba(242, 194, 48, 0.3);
+}
+
+.phase-upcoming .phase-dot {
+  border-color: var(--status-upcoming);
 }
 
 .phase-num {
@@ -419,22 +428,29 @@ img { max-width: 100%; display: block; }
   font-variant-numeric: tabular-nums;
 }
 
+/* "Sketch card" treatment: the card matches the section background rather
+   than being filled in, a solid 2px outline, sharp corners, and a flat
+   offset shadow (no blur) instead of a soft drop shadow. The shadow's
+   color is what actually communicates status — dark green (done), yellow
+   (in progress), coral (upcoming) — same language as the phase dots. */
 .phase-content {
-  background: #FBF9F5;
-  border: 1px solid var(--line);
-  border-radius: 10px;
+  background: var(--paper-alt);
+  border: 2px solid var(--heading);
+  border-radius: 0;
   padding: 22px 24px;
+  box-shadow: 8px 8px 0 0 var(--line);
 }
 
 .phase-done .phase-content {
-  background: var(--teal-soft);
-  border-color: #C5D5D8;
+  box-shadow: 8px 8px 0 0 var(--status-past);
 }
 
 .phase-current .phase-content {
-  background: var(--accent-soft);
-  border-color: #E8D3A5;
-  border-left: 6px solid var(--accent-deep);
+  box-shadow: 8px 8px 0 0 var(--status-active);
+}
+
+.phase-upcoming .phase-content {
+  box-shadow: 8px 8px 0 0 var(--status-upcoming);
 }
 
 .phase-heading {
@@ -490,17 +506,11 @@ img { max-width: 100%; display: block; }
 }
 
 .team-card {
-  background: var(--teal-soft);
-  border: 1px solid #C5D5D8;
+  background: var(--card);
+  border: 1px solid var(--line);
   border-left: 4px solid var(--primary);
-  border-radius: 6px;
+  border-radius: 0;
   padding: 20px 22px;
-}
-
-.team-card:nth-child(even) {
-  background: var(--accent-soft);
-  border-color: #E8D3A5;
-  border-left-color: var(--accent-deep);
 }
 
 .team-role {
@@ -508,10 +518,6 @@ img { max-width: 100%; display: block; }
   color: var(--primary-dark);
   font-weight: 700;
   margin-bottom: 6px;
-}
-
-.team-card:nth-child(even) .team-role {
-  color: var(--accent-deep);
 }
 
 .team-name {
