@@ -1,8 +1,27 @@
-// Renders CONTENT (from content.js) into the page.
-// You shouldn't need to edit this file for normal content updates.
+// Renders CONTENT (from content.js) into the page, in whichever
+// language is currently active. You shouldn't need to edit this
+// file for normal content updates — see content.js instead.
+
+const LANG_STORAGE_KEY = "openjury-lang";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const c = CONTENT;
+  const saved = localStorage.getItem(LANG_STORAGE_KEY);
+  const initialLang = (saved === "en" || saved === "tr") ? saved : "en";
+  renderContent(initialLang);
+  initLangToggle(initialLang);
+  initScrollSpy();
+});
+
+function renderContent(lang) {
+  const c = CONTENT[lang];
+  const ui = c.ui;
+  document.documentElement.lang = lang;
+
+  // Nav
+  setText("nav-aim", ui.navAim);
+  setText("nav-timeline", ui.navTimeline);
+  setText("nav-team", ui.navTeam);
+  setText("nav-contact", ui.navContact);
 
   // Hero
   setText("hero-programme", c.programme);
@@ -14,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Aim
   const aimGrid = document.getElementById("aim-grid");
+  aimGrid.innerHTML = "";
   c.aim.forEach(block => {
     const div = document.createElement("div");
     div.className = "aim-block";
@@ -21,14 +41,17 @@ document.addEventListener("DOMContentLoaded", () => {
     aimGrid.appendChild(div);
   });
 
-  // Timeline progress
+  // Timeline heading/lede/progress
+  setText("timeline-heading", ui.timelineHeading);
+  setText("timeline-lede", ui.timelineLede);
   const pct = Math.max(0, Math.min(100, Math.round((c.currentMonth / c.totalMonths) * 100)));
   document.getElementById("progress-bar").style.width = pct + "%";
-  setText("progress-label", `Month ${c.currentMonth} of ${c.totalMonths}`);
+  setText("progress-label", ui.monthLabel(c.currentMonth, c.totalMonths));
 
   // Timeline: each row pairs one phase with any updates linked to it
   // (via an update's relatedPhase matching the phase's code, e.g. "WP2").
   const timelineGrid = document.getElementById("timeline-grid");
+  timelineGrid.innerHTML = "";
   c.phases.forEach((phase, i) => {
     const linkedUpdates = c.updates.filter(u => u.relatedPhase === phase.code);
 
@@ -60,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="phase-content">
         <div class="phase-heading">
           <h3>${escapeHTML(phase.title)}</h3>
-          <span class="phase-status-tag">${statusLabel(phase.status)}</span>
+          <span class="phase-status-tag">${statusLabel(phase.status, ui)}</span>
         </div>
         <p class="phase-months">${escapeHTML(phase.months)}</p>
         <p class="phase-body">${escapeHTML(phase.body)}</p>
@@ -72,7 +95,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Team
+  setText("team-heading", ui.teamHeading);
   const teamGrid = document.getElementById("team-grid");
+  teamGrid.innerHTML = "";
   c.team.forEach(member => {
     const div = document.createElement("div");
     div.className = "team-card";
@@ -87,9 +112,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Gallery
+  setText("gallery-heading", ui.galleryHeading);
+  setText("gallery-lede", ui.galleryLede);
   const galleryGrid = document.getElementById("gallery-grid");
+  galleryGrid.innerHTML = "";
   if (c.gallery.length === 0) {
-    galleryGrid.innerHTML = `<p class="gallery-empty">No photos added yet.</p>`;
+    galleryGrid.innerHTML = `<p class="gallery-empty">${escapeHTML(ui.galleryEmpty)}</p>`;
   } else {
     c.gallery.forEach(photo => {
       const fig = document.createElement("figure");
@@ -106,10 +134,32 @@ document.addEventListener("DOMContentLoaded", () => {
   const footerEmail = document.getElementById("footer-email");
   footerEmail.textContent = c.footerEmail;
   footerEmail.href = "mailto:" + c.footerEmail;
+  setText("footer-updated-prefix", ui.footerUpdatedPrefix);
   setText("footer-updated", c.lastUpdated);
+  setText("footer-note-text", ui.footerNote);
+}
 
-  initScrollSpy();
-});
+function initLangToggle(initialLang) {
+  const buttons = document.querySelectorAll(".lang-btn");
+  setActiveLangButton(initialLang);
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const lang = btn.getAttribute("data-lang");
+      localStorage.setItem(LANG_STORAGE_KEY, lang);
+      renderContent(lang);
+      setActiveLangButton(lang);
+    });
+  });
+}
+
+function setActiveLangButton(lang) {
+  document.querySelectorAll(".lang-btn").forEach(btn => {
+    const isActive = btn.getAttribute("data-lang") === lang;
+    btn.classList.toggle("active", isActive);
+    btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+  });
+}
 
 // Bolds the nav link for whichever section is currently in view.
 function initScrollSpy() {
@@ -147,10 +197,10 @@ function setText(id, value) {
   if (el) el.textContent = value;
 }
 
-function statusLabel(status) {
-  if (status === "done") return "Completed";
-  if (status === "current") return "In progress";
-  return "Upcoming";
+function statusLabel(status, ui) {
+  if (status === "done") return ui.statusDone;
+  if (status === "current") return ui.statusCurrent;
+  return ui.statusUpcoming;
 }
 
 function escapeHTML(str) {
