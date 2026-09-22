@@ -46,7 +46,7 @@ const CONTENT = {
     },
 
     // ---------- Top banner ----------
-    programme: "TÜBİTAK 1001 Research Project · Atılım University",
+    programme: "TÜBİTAK 1001/125K884 Research Project · Atılım University",
     title: "Assessment and Evaluation Model for Industrial Design Juries",
     // Wrap a phrase in <em>...</em> to highlight it, like below.
     tagline: "Turning design juries from subjective grading into a <em>transparent, evidence-based</em>, student-centered process — from expert consensus to a working digital application.",
@@ -87,17 +87,11 @@ const CONTENT = {
         relatedPhase: "WP2"
       },
       {
-        title: "Article published",
+        title: "Article accepted",
         subtitle: "August 2026",
-        body: "A short piece on the project's aims was published in [venue].",
+        body: "The study focusing on the literature and a SWOT analysis on jury-based assessments is accepted by the International Academic Conference on Teaching, Learning and Education.",
         relatedPhase: "WP2"
       },
-      {
-        title: "New team member",
-        subtitle: "July 2026",
-        body: "Welcomed a new member to the project team.",
-        relatedPhase: "WP1"
-      }
     ],
 
     // ---------- Project phases (work packages) ----------
@@ -182,7 +176,7 @@ const CONTENT = {
       statusUpcoming: "Yaklaşan"
     },
 
-    programme: "TÜBİTAK 1001 Araştırma Projesi · Atılım Üniversitesi",
+    programme: "TÜBİTAK 1001/125K884 Araştırma Projesi · Atılım Üniversitesi",
     title: "Endüstriyel Tasarım Jürileri için Ölçme ve Değerlendirme Modeli",
     tagline: "Tasarım jürilerini öznel notlandırmadan <em>şeffaf, kanıta dayalı</em> ve öğrenci merkezli bir sürece dönüştürüyoruz — uzman görüş birliğinden çalışan bir dijital uygulamaya.",
 
@@ -215,17 +209,11 @@ const CONTENT = {
         relatedPhase: "WP2"
       },
       {
-        title: "Makale yayımlandı",
+        title: "Makale kabul aldı!",
         subtitle: "Ağustos 2026",
-        body: "Projenin amaçlarına ilişkin kısa bir yazı [venue] üzerinde yayımlandı.",
+        body: "Jüri temelli değerlendirmelere ilişkin literatür ve SWOT analizine odaklanan çalışma, International Academic Conference on Teaching, Learning and Education tarafından kabul edildi!",
         relatedPhase: "WP2"
       },
-      {
-        title: "Yeni ekip üyesi",
-        subtitle: "Temmuz 2026",
-        body: "Proje ekibine yeni bir üye katıldı.",
-        relatedPhase: "WP1"
-      }
     ],
 
     phases: [
