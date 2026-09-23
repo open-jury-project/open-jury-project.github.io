@@ -91,8 +91,14 @@
   <!-- ============ GALLERY ============ -->
   <section class="section section-alt" id="gallery">
     <div class="section-inner">
-      <h2 id="gallery-heading">From the project</h2>
-      <div class="gallery-grid" id="gallery-grid">
+      <div class="gallery-heading-row">
+        <h2 id="gallery-heading">From the project</h2>
+        <div class="gallery-nav">
+          <button type="button" class="gallery-nav-btn" id="gallery-prev" aria-label="Previous photos">‹</button>
+          <button type="button" class="gallery-nav-btn" id="gallery-next" aria-label="Next photos">›</button>
+        </div>
+      </div>
+      <div class="gallery-track" id="gallery-grid">
         <!-- filled by script.js from content.js -->
       </div>
     </div>
