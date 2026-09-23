@@ -642,12 +642,17 @@ img { max-width: 100%; display: block; }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fill, 156px);
+  gap: 40px;
+}
+
+.gallery-item {
+  margin: 0;
 }
 
 .gallery-item img {
-  width: 100%;
+  width: 156px;
+  height: 156px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
@@ -763,7 +768,6 @@ footer {
 }
 
 .footer-mark {
-  display: flex-start;
   width: 44px;
   height: 44px;
   filter: brightness(0) invert(1);
