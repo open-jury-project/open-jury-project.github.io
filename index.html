@@ -91,15 +91,15 @@
   <!-- ============ GALLERY ============ -->
   <section class="section section-alt" id="gallery">
     <div class="section-inner">
-      <div class="gallery-heading-row">
-        <h2 id="gallery-heading">From the project</h2>
-        <div class="gallery-nav">
-          <button type="button" class="gallery-nav-btn" id="gallery-prev" aria-label="Previous photos">‹</button>
-          <button type="button" class="gallery-nav-btn" id="gallery-next" aria-label="Next photos">›</button>
+      <h2 id="gallery-heading">From the project</h2>
+      <div class="gallery-slider">
+        <button type="button" class="gallery-nav-btn gallery-nav-prev" id="gallery-prev" aria-label="Previous photo">‹</button>
+        <div class="gallery-viewport">
+          <div class="gallery-track" id="gallery-grid">
+            <!-- filled by script.js from content.js -->
+          </div>
         </div>
-      </div>
-      <div class="gallery-track" id="gallery-grid">
-        <!-- filled by script.js from content.js -->
+        <button type="button" class="gallery-nav-btn gallery-nav-next" id="gallery-next" aria-label="Next photo">›</button>
       </div>
     </div>
   </section>
