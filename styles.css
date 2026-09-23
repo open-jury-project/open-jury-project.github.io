@@ -781,19 +781,19 @@ footer {
 }
 
 .footer-sub {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: #A9BCBF;
   margin-top: 2px;
 }
 
 .footer-pi {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: #DDE6E7;
-  margin-top: 10px;
+  margin-top: 16px;
 }
 
 .footer-contact p {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   margin-bottom: 4px;
 }
 
