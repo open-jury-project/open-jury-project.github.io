@@ -562,6 +562,15 @@ img { max-width: 100%; display: block; }
   box-shadow: 6px 6px 0 0 var(--primary);
 }
 
+.team-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 2px solid var(--heading);
+  border-radius: 0;
+  margin-bottom: 16px;
+}
+
 .team-role {
   font-size: 0.8rem;
   color: var(--primary-dark);
