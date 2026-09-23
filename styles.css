@@ -549,8 +549,15 @@ img { max-width: 100%; display: block; }
    Team
    ========================================================== */
 .team-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.team-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -559,6 +566,7 @@ img { max-width: 100%; display: block; }
   border: 2px solid var(--heading);
   border-radius: 0;
   padding: 20px 22px;
+  flex: 0 1 240px;
   box-shadow: 6px 6px 0 0 var(--primary);
 }
 
@@ -600,10 +608,10 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 860px) {
-  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-card { flex-basis: 45%; }
 }
 @media (max-width: 560px) {
-  .team-grid { grid-template-columns: 1fr; }
+  .team-card { flex-basis: 100%; }
 }
 
 /* ==========================================================
@@ -781,19 +789,19 @@ footer {
 }
 
 .footer-sub {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #A9BCBF;
   margin-top: 2px;
 }
 
 .footer-pi {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #DDE6E7;
-  margin-top: 16px;
+  margin-top: 10px;
 }
 
 .footer-contact p {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   margin-bottom: 4px;
 }
 
