@@ -92,19 +92,21 @@
   <section class="section section-alt" id="gallery">
     <div class="section-inner">
       <h2 id="gallery-heading">From the project</h2>
-      <div class="gallery-slider">
-        <button type="button" class="gallery-nav-btn gallery-nav-prev" id="gallery-prev" aria-label="Previous photo">‹</button>
-        <div class="gallery-viewport">
-          <div class="gallery-track" id="gallery-grid">
-            <!-- filled by script.js from content.js -->
-          </div>
-        </div>
-        <button type="button" class="gallery-nav-btn gallery-nav-next" id="gallery-next" aria-label="Next photo">›</button>
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- filled by script.js from content.js -->
       </div>
     </div>
   </section>
 
 </main>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close">×</button>
+  <figure class="lightbox-figure">
+    <img id="lightbox-img" src="" alt="">
+    <figcaption id="lightbox-caption"></figcaption>
+  </figure>
+</div>
 
 <footer id="contact">
   <div class="section-inner footer-inner">
@@ -113,11 +115,16 @@
       <div>
         <p class="footer-title">OpenJury</p>
         <p class="footer-sub" id="footer-programme">TÜBİTAK 1001 · Atılım University</p>
+        <p class="footer-pi" id="footer-pi">Principal Investigator — Doç. Dr. Seçil Toros</p>
       </div>
     </div>
     <div class="footer-contact">
-      <p id="footer-pi">Principal Investigator — Doç. Dr. Seçil Toros</p>
       <p><a id="footer-email" href="mailto:secil.toros@atilim.edu.tr">secil.toros@atilim.edu.tr</a></p>
+      <a id="footer-linkedin" class="footer-social" href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/>
+        </svg>
+      </a>
     </div>
     <p class="footer-note" id="editing-note"><span id="footer-updated-prefix">Last updated</span> <span id="footer-updated">—</span>. <span id="footer-note-text">This is a project documentation site, not an official TÜBİTAK publication.</span></p>
   </div>
