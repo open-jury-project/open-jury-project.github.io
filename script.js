@@ -131,6 +131,8 @@ function renderContent(lang) {
       galleryGrid.appendChild(fig);
     });
   }
+  galleryIndex = 0;
+  updateGalleryPosition();
 
   // Footer
   setText("footer-programme", c.programme);
@@ -166,23 +168,35 @@ function setActiveLangButton(lang) {
 }
 
 // Bolds the nav link for whichever section is currently in view.
-// Lets the arrow buttons scroll the gallery track left/right by roughly
-// one photo's width at a time (falls back gracefully if there's nothing
-// in the gallery yet).
-function initGallerySlider() {
+// Lets the arrow buttons step through the gallery one photo at a time.
+// currentIndex lives outside renderContent so it survives re-renders,
+// but gets reset to the first photo whenever content is (re)rendered
+// (e.g. switching language).
+let galleryIndex = 0;
+
+function updateGalleryPosition() {
   const track = document.getElementById("gallery-grid");
   const prevBtn = document.getElementById("gallery-prev");
   const nextBtn = document.getElementById("gallery-next");
   if (!track || !prevBtn || !nextBtn) return;
 
-  const scrollByOneCard = (direction) => {
-    const card = track.querySelector(".gallery-item");
-    const step = card ? card.getBoundingClientRect().width + 20 : track.clientWidth * 0.8;
-    track.scrollBy({ left: direction * step, behavior: "smooth" });
-  };
+  const count = track.children.length;
+  galleryIndex = Math.max(0, Math.min(galleryIndex, count - 1));
+  track.style.transform = `translateX(-${galleryIndex * 100}%)`;
+  prevBtn.disabled = galleryIndex === 0;
+  nextBtn.disabled = galleryIndex >= count - 1;
+}
 
-  prevBtn.addEventListener("click", () => scrollByOneCard(-1));
-  nextBtn.addEventListener("click", () => scrollByOneCard(1));
+// Attaches the button listeners once; safe to call multiple times since
+// it always clicks through the same two static buttons.
+function initGallerySlider() {
+  const prevBtn = document.getElementById("gallery-prev");
+  const nextBtn = document.getElementById("gallery-next");
+  if (!prevBtn || !nextBtn || prevBtn.dataset.bound) return;
+
+  prevBtn.addEventListener("click", () => { galleryIndex--; updateGalleryPosition(); });
+  nextBtn.addEventListener("click", () => { galleryIndex++; updateGalleryPosition(); });
+  prevBtn.dataset.bound = "true";
 }
 
 function initScrollSpy() {
