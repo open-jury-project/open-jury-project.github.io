@@ -120,14 +120,18 @@ const CONTENT = {
     ],
 
     // ---------- Team ----------
-    // email is optional — leave as "" to hide it
+    // email is optional — leave as "" to hide it.
+    // photo is optional too — leave as "" to show no photo (text-only
+    // card, like before). To add one: put the image file in
+    // assets/team/ and set photo to "assets/team/filename.jpg" — same
+    // path works in both languages since it's the same file.
     team: [
-      { role: "Principal Investigator", name: "Assoc. Prof. Dr. Seçil Toros", email: "" },
-      { role: "Advisor", name: "Prof. Dr. Gülay Hasdoğan", email: "" },
-      { role: "Researcher", name: "Assoc. Prof. Dr. Engin Kapkın", email: "" },
-      { role: "Researcher", name: "Asst. Prof. Dr. Elif Öztürk", email: "" },
-      { role: "MSc Scholar", name: "Research Assistant Şule Ak", email: "" },
-      { role: "PhD Scholar", name: "Dr. Yaprak Deniz Yurt", email: "" }
+      { role: "Principal Investigator", name: "Assoc. Prof. Dr. Seçil Toros", email: "", photo: "" },
+      { role: "Advisor", name: "Prof. Dr. Gülay Hasdoğan", email: "", photo: "" },
+      { role: "Researcher", name: "Assoc. Prof. Dr. Engin Kapkın", email: "", photo: "" },
+      { role: "Researcher", name: "Asst. Prof. Dr. Elif Öztürk", email: "", photo: "" },
+      { role: "MSc Scholar", name: "Research Assistant Şule Ak", email: "", photo: "" },
+      { role: "PhD Scholar", name: "Dr. Yaprak Deniz Yurt", email: "", photo: "" }
     ],
 
     // ---------- Planned outputs (not currently shown on the page,
@@ -238,12 +242,12 @@ const CONTENT = {
     ],
 
     team: [
-      { role: "Proje Yürütücüsü", name: "Doç. Dr. Seçil Toros", email: "" },
-      { role: "Danışman", name: "Prof. Dr. Gülay Hasdoğan", email: "" },
-      { role: "Araştırmacı", name: "Doç. Dr. Engin Kapkın", email: "" },
-      { role: "Araştırmacı", name: "Dr. Öğr. Üyesi Elif Öztürk", email: "" },
-      { role: "Yüksek Lisans Bursiyeri", name: "Arş. Gör. Şule Ak", email: "" },
-      { role: "Doktora Bursiyeri", name: "Dr. Yaprak Deniz Yurt", email: "" }
+      { role: "Proje Yürütücüsü", name: "Doç. Dr. Seçil Toros", email: "", photo: "" },
+      { role: "Danışman", name: "Prof. Dr. Gülay Hasdoğan", email: "", photo: "" },
+      { role: "Araştırmacı", name: "Doç. Dr. Engin Kapkın", email: "", photo: "" },
+      { role: "Araştırmacı", name: "Dr. Öğr. Üyesi Elif Öztürk", email: "", photo: "" },
+      { role: "Yüksek Lisans Bursiyeri", name: "Arş. Gör. Şule Ak", email: "", photo: "" },
+      { role: "Doktora Bursiyeri", name: "Dr. Yaprak Deniz Yurt", email: "", photo: "" }
     ],
 
     outputs: [
