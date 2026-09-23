@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderContent(initialLang);
   initLangToggle(initialLang);
   initScrollSpy();
-  initGallerySlider();
+  initLightbox();
 });
 
 function renderContent(lang) {
@@ -128,11 +128,12 @@ function renderContent(lang) {
       fig.className = "gallery-item";
       fig.innerHTML = `<img src="${escapeHTML(photo.src)}" alt="${escapeHTML(photo.caption || "")}" loading="lazy">
         ${photo.caption ? `<figcaption>${escapeHTML(photo.caption)}</figcaption>` : ""}`;
+      fig.querySelector("img").addEventListener("click", () => {
+        openLightbox(photo.src, photo.caption || "");
+      });
       galleryGrid.appendChild(fig);
     });
   }
-  galleryIndex = 0;
-  updateGalleryPosition();
 
   // Footer
   setText("footer-programme", c.programme);
@@ -140,6 +141,16 @@ function renderContent(lang) {
   const footerEmail = document.getElementById("footer-email");
   footerEmail.textContent = c.footerEmail;
   footerEmail.href = "mailto:" + c.footerEmail;
+  const footerLinkedin = document.getElementById("footer-linkedin");
+  if (footerLinkedin) {
+    if (c.linkedinUrl) {
+      footerLinkedin.href = c.linkedinUrl;
+      footerLinkedin.style.display = "";
+    } else {
+      // No URL set yet — hide the icon rather than link to a dead "#".
+      footerLinkedin.style.display = "none";
+    }
+  }
   setText("footer-updated-prefix", ui.footerUpdatedPrefix);
   setText("footer-updated", c.lastUpdated);
   setText("footer-note-text", ui.footerNote);
@@ -172,31 +183,37 @@ function setActiveLangButton(lang) {
 // currentIndex lives outside renderContent so it survives re-renders,
 // but gets reset to the first photo whenever content is (re)rendered
 // (e.g. switching language).
-let galleryIndex = 0;
-
-function updateGalleryPosition() {
-  const track = document.getElementById("gallery-grid");
-  const prevBtn = document.getElementById("gallery-prev");
-  const nextBtn = document.getElementById("gallery-next");
-  if (!track || !prevBtn || !nextBtn) return;
-
-  const count = track.children.length;
-  galleryIndex = Math.max(0, Math.min(galleryIndex, count - 1));
-  track.style.transform = `translateX(-${galleryIndex * 100}%)`;
-  prevBtn.disabled = galleryIndex === 0;
-  nextBtn.disabled = galleryIndex >= count - 1;
+// Click-to-preview popup for gallery photos.
+function openLightbox(src, caption) {
+  const lightbox = document.getElementById("lightbox");
+  const img = document.getElementById("lightbox-img");
+  const captionEl = document.getElementById("lightbox-caption");
+  if (!lightbox || !img) return;
+  img.src = src;
+  img.alt = caption;
+  captionEl.textContent = caption;
+  lightbox.hidden = false;
 }
 
-// Attaches the button listeners once; safe to call multiple times since
-// it always clicks through the same two static buttons.
-function initGallerySlider() {
-  const prevBtn = document.getElementById("gallery-prev");
-  const nextBtn = document.getElementById("gallery-next");
-  if (!prevBtn || !nextBtn || prevBtn.dataset.bound) return;
+function closeLightbox() {
+  const lightbox = document.getElementById("lightbox");
+  if (lightbox) lightbox.hidden = true;
+}
 
-  prevBtn.addEventListener("click", () => { galleryIndex--; updateGalleryPosition(); });
-  nextBtn.addEventListener("click", () => { galleryIndex++; updateGalleryPosition(); });
-  prevBtn.dataset.bound = "true";
+// Attaches lightbox close behavior once: the × button, clicking the dark
+// backdrop, and pressing Escape all close it.
+function initLightbox() {
+  const lightbox = document.getElementById("lightbox");
+  const closeBtn = document.getElementById("lightbox-close");
+  if (!lightbox || !closeBtn) return;
+
+  closeBtn.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLightbox();
+  });
 }
 
 function initScrollSpy() {
