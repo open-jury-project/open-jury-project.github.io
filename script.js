@@ -104,7 +104,11 @@ function renderContent(lang) {
     const emailHTML = member.email
       ? `<a href="mailto:${escapeHTML(member.email)}">${escapeHTML(member.email)}</a>`
       : "";
+    const photoHTML = member.photo
+      ? `<img class="team-photo" src="${escapeHTML(member.photo)}" alt="${escapeHTML(member.name)}">`
+      : "";
     div.innerHTML = `
+      ${photoHTML}
       <p class="team-role">${escapeHTML(member.role)}</p>
       <p class="team-name">${escapeHTML(member.name)}</p>
       ${emailHTML}`;
