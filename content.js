@@ -127,11 +127,12 @@ const CONTENT = {
     // path works in both languages since it's the same file.
     team: [
       { role: "Principal Investigator", name: "Assoc. Prof. Dr. Seçil Toros", email: "", photo: "assets/team/secil.jpeg" },
-      { role: "Advisor", name: "Prof. Dr. Gülay Hasdoğan", email: "", photo: "" },
       { role: "Researcher", name: "Assoc. Prof. Dr. Engin Kapkın", email: "", photo: "assets/team/engin.jpeg" },
       { role: "Researcher", name: "Asst. Prof. Dr. Elif Öztürk", email: "", photo: "assets/team/elif.jpeg" },
+      { role: "PhD Scholar", name: "Dr. Yaprak Deniz Yurt", email: "", photo: "assets/team/deniz.jpg" },
       { role: "MSc Scholar", name: "Research Assistant Şule Ak", email: "", photo: "assets/team/sule.jpeg" },
-      { role: "PhD Scholar", name: "Dr. Yaprak Deniz Yurt", email: "", photo: "assets/team/deniz.jpg" }
+      { role: "Advisor", name: "Prof. Dr. Gülay Hasdoğan", email: "", photo: "" },
+      { role: "Advisor", name: "Prof. Dr. Emre Toros", email: "", photo: "", photoPosition: "" }
     ],
 
     // ---------- Planned outputs (not currently shown on the page,
@@ -243,11 +244,12 @@ const CONTENT = {
 
     team: [
       { role: "Proje Yürütücüsü", name: "Doç. Dr. Seçil Toros", email: "", photo: "assets/team/secil.jpeg" },
-      { role: "Danışman", name: "Prof. Dr. Gülay Hasdoğan", email: "", photo: "" },
       { role: "Araştırmacı", name: "Doç. Dr. Engin Kapkın", email: "", photo: "assets/team/engin.jpeg" },
       { role: "Araştırmacı", name: "Dr. Öğr. Üyesi Elif Öztürk", email: "", photo: "assets/team/elif.jpeg" },
+      { role: "Doktora Bursiyeri", name: "Dr. Yaprak Deniz Yurt", email: "", photo: "assets/team/deniz.jpg" },
       { role: "Yüksek Lisans Bursiyeri", name: "Arş. Gör. Şule Ak", email: "", photo: "assets/team/sule.jpeg" },
-      { role: "Doktora Bursiyeri", name: "Dr. Yaprak Deniz Yurt", email: "", photo: "assets/team/deniz.jpg" }
+      { role: "Danışman", name: "Prof. Dr. Gülay Hasdoğan", email: "", photo: "" },
+      { role: "Danışman", name: "Prof. Dr. Emre Toros", email: "", photo: "" }
     ],
 
     outputs: [
