@@ -96,24 +96,35 @@ function renderContent(lang) {
   });
 
   // Team
+  // Rendered as two centered rows rather than one rigid grid: the first
+  // 3 people in content.js's team list form row 1, everyone after that
+  // forms row 2. Change FIRST_ROW_SIZE below if you want a different split.
   setText("team-heading", ui.teamHeading);
   const teamGrid = document.getElementById("team-grid");
   teamGrid.innerHTML = "";
-  c.team.forEach(member => {
-    const div = document.createElement("div");
-    div.className = "team-card";
-    const emailHTML = member.email
-      ? `<a href="mailto:${escapeHTML(member.email)}">${escapeHTML(member.email)}</a>`
-      : "";
-    const photoHTML = member.photo
-      ? `<img class="team-photo" src="${escapeHTML(member.photo)}" alt="${escapeHTML(member.name)}"${member.photoPosition ? ` style="object-position: ${escapeHTML(member.photoPosition)};"` : ""}>`
-      : "";
-    div.innerHTML = `
-      ${photoHTML}
-      <p class="team-role">${escapeHTML(member.role)}</p>
-      <p class="team-name">${escapeHTML(member.name)}</p>
-      ${emailHTML}`;
-    teamGrid.appendChild(div);
+  const FIRST_ROW_SIZE = 3;
+  const rows = [c.team.slice(0, FIRST_ROW_SIZE), c.team.slice(FIRST_ROW_SIZE)].filter(r => r.length > 0);
+
+  rows.forEach(rowMembers => {
+    const rowEl = document.createElement("div");
+    rowEl.className = "team-row";
+    rowMembers.forEach(member => {
+      const div = document.createElement("div");
+      div.className = "team-card";
+      const emailHTML = member.email
+        ? `<a href="mailto:${escapeHTML(member.email)}">${escapeHTML(member.email)}</a>`
+        : "";
+      const photoHTML = member.photo
+        ? `<img class="team-photo" src="${escapeHTML(member.photo)}" alt="${escapeHTML(member.name)}"${member.photoPosition ? ` style="object-position: ${escapeHTML(member.photoPosition)};"` : ""}>`
+        : "";
+      div.innerHTML = `
+        ${photoHTML}
+        <p class="team-role">${escapeHTML(member.role)}</p>
+        <p class="team-name">${escapeHTML(member.name)}</p>
+        ${emailHTML}`;
+      rowEl.appendChild(div);
+    });
+    teamGrid.appendChild(rowEl);
   });
 
   // Gallery
