@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderContent(initialLang);
   initLangToggle(initialLang);
   initScrollSpy();
+  initGallerySlider();
 });
 
 function renderContent(lang) {
@@ -105,7 +106,7 @@ function renderContent(lang) {
       ? `<a href="mailto:${escapeHTML(member.email)}">${escapeHTML(member.email)}</a>`
       : "";
     const photoHTML = member.photo
-      ? `<img class="team-photo" src="${escapeHTML(member.photo)}" alt="${escapeHTML(member.name)}">`
+      ? `<img class="team-photo" src="${escapeHTML(member.photo)}" alt="${escapeHTML(member.name)}"${member.photoPosition ? ` style="object-position: ${escapeHTML(member.photoPosition)};"` : ""}>`
       : "";
     div.innerHTML = `
       ${photoHTML}
@@ -165,6 +166,25 @@ function setActiveLangButton(lang) {
 }
 
 // Bolds the nav link for whichever section is currently in view.
+// Lets the arrow buttons scroll the gallery track left/right by roughly
+// one photo's width at a time (falls back gracefully if there's nothing
+// in the gallery yet).
+function initGallerySlider() {
+  const track = document.getElementById("gallery-grid");
+  const prevBtn = document.getElementById("gallery-prev");
+  const nextBtn = document.getElementById("gallery-next");
+  if (!track || !prevBtn || !nextBtn) return;
+
+  const scrollByOneCard = (direction) => {
+    const card = track.querySelector(".gallery-item");
+    const step = card ? card.getBoundingClientRect().width + 20 : track.clientWidth * 0.8;
+    track.scrollBy({ left: direction * step, behavior: "smooth" });
+  };
+
+  prevBtn.addEventListener("click", () => scrollByOneCard(-1));
+  nextBtn.addEventListener("click", () => scrollByOneCard(1));
+}
+
 function initScrollSpy() {
   const navLinks = Array.from(document.querySelectorAll(".nav-links a"));
   if (navLinks.length === 0) return;
