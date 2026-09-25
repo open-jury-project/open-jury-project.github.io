@@ -132,7 +132,7 @@ const CONTENT = {
       { role: "PhD Scholar", name: "Dr. Yaprak Deniz Yurt", email: "", photo: "assets/team/deniz.jpg" },
       { role: "MSc Scholar", name: "Research Assistant Şule Ak", email: "", photo: "assets/team/sule.jpeg" },
       { role: "Advisor", name: "Prof. Dr. Gülay Hasdoğan", email: "", photo: "" },
-      { role: "Advisor", name: "Prof. Dr. Emre Toros", email: "", photo: "", photoPosition: "" }
+      { role: "Advisor", name: "Prof. Dr. Emre Toros", email: "", photo: "", photoPosition: "assets/team/emre.jpeg" }
     ],
 
     // ---------- Planned outputs (not currently shown on the page,
@@ -249,7 +249,7 @@ const CONTENT = {
       { role: "Doktora Bursiyeri", name: "Dr. Yaprak Deniz Yurt", email: "", photo: "assets/team/deniz.jpg" },
       { role: "Yüksek Lisans Bursiyeri", name: "Arş. Gör. Şule Ak", email: "", photo: "assets/team/sule.jpeg" },
       { role: "Danışman", name: "Prof. Dr. Gülay Hasdoğan", email: "", photo: "" },
-      { role: "Danışman", name: "Prof. Dr. Emre Toros", email: "", photo: "" }
+      { role: "Danışman", name: "Prof. Dr. Emre Toros", email: "", photo: "assets/team/emre.jpeg" }
     ],
 
     outputs: [
